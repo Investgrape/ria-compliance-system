@@ -2,19 +2,8 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Search, Menu, BarChart, Users, FileText, Settings, Calendar, HelpCircle, Shield } from 'lucide-react';
-
-const mockData = {
-  clientStats: [
-    { month: 'Jan', clients: 150 },
-    { month: 'Feb', clients: 165 },
-    { month: 'Mar', clients: 180 },
-    { month: 'Apr', clients: 195 },
-    { month: 'May', clients: 210 }
-  ]
-};
+import { AgreementsView } from '@/components/views/agreements-view';
 
 interface SidebarItem {
   icon: React.ElementType;
@@ -24,7 +13,7 @@ interface SidebarItem {
 
 export function ComplianceSystem() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [activeSection, setActiveSection] = useState('dashboard');
+  const [activeSection, setActiveSection] = useState('agreements');
   const [searchTerm, setSearchTerm] = useState('');
 
   const sidebarItems: SidebarItem[] = [
@@ -35,38 +24,6 @@ export function ComplianceSystem() {
     { icon: Calendar, label: 'Calendar', id: 'calendar' },
     { icon: Settings, label: 'Settings', id: 'settings' }
   ];
-
-  const DashboardContent = () => (
-    <div className="p-6 space-y-6">
-      <div className="flex justify-between items-start">
-        <div>
-          <h1 className="text-2xl font-semibold">Dashboard</h1>
-          <p className="text-gray-500">Overview of your compliance metrics</p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-medium mb-4">Client Growth</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={mockData.clientStats}>
-                <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
-                <Line 
-                  type="monotone" 
-                  dataKey="clients" 
-                  stroke="#10B981" 
-                  strokeWidth={2}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
-  );
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -137,10 +94,10 @@ export function ComplianceSystem() {
 
         {/* Content Area */}
         <div className="flex-1 overflow-auto">
-          {activeSection === 'dashboard' && <DashboardContent />}
-          {activeSection === 'agreements' && (
+          {activeSection === 'agreements' && <AgreementsView />}
+          {activeSection === 'dashboard' && (
             <div className="p-6">
-              <h1 className="text-2xl font-semibold">Agreements</h1>
+              <h1 className="text-2xl font-semibold">Dashboard</h1>
             </div>
           )}
           {activeSection === 'clients' && (
