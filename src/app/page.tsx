@@ -2,6 +2,10 @@
 
 import ComplianceSystem from '@/components/ComplianceSystem';
 
-export default function Home() {
-  return <ComplianceSystem />;
+export default function HomePage() {
+  return (
+    <main className="min-h-screen">
+      <ComplianceSystem />
+    </main>
+  );
 }
