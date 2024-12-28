@@ -3,6 +3,9 @@ import TopNav from './TopNav';
 import Sidebar from './Sidebar';
 import DashboardView from './views/DashboardView';
 import ClientAgreementsView from './views/ClientAgreementsView';
+import AuditView from './views/AuditView';
+import EmployeesView from './views/EmployeesView';
+import EmailMonitorView from './views/EmailMonitorView';
 
 const ComplianceSystem = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -12,6 +15,12 @@ const ComplianceSystem = () => {
     switch(activeSection) {
       case 'agreements':
         return <ClientAgreementsView />;
+      case 'audit':
+        return <AuditView />;
+      case 'employees':
+        return <EmployeesView />;
+      case 'email':
+        return <EmailMonitorView />;
       default:
         return <DashboardView />;
     }
