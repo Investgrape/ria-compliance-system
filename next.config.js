@@ -2,9 +2,9 @@
 const nextConfig = {
   output: 'export',
   basePath: '/ria-compliance-system',
-  images: {
-    unoptimized: true,
-  },
+  images: { unoptimized: true },
+  reactStrictMode: true,
+  swcMinify: true,
 }
 
 module.exports = nextConfig
