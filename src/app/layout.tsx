@@ -2,17 +2,17 @@ import './globals.css';
 
 export const metadata = {
   title: 'RIA Compliance System',
-  description: 'Compliance System for RIAs',
-};
+  description: 'Compliance management system for RIAs',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  );
+  )
 }
