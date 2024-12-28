@@ -1,6 +1,6 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
+    <main className="min-h-screen flex items-center justify-center">
       <h1 className="text-4xl font-bold">RIA Compliance System</h1>
     </main>
   );
