@@ -1,76 +1,93 @@
 # RIA Compliance System
 
-A comprehensive compliance management system for Registered Investment Advisors (RIAs).
+A comprehensive compliance management system for Registered Investment Advisors (RIAs). Built with Next.js, React, and Tailwind CSS.
 
 ## Features
 
-- Client Agreement Management
-- Document Management
-- Compliance Calendar
-- Audit Tracking
-- Fee Analysis
-- Risk Assessment
-- SEC Filing Management
+- 📊 Dashboard with key compliance metrics
+- 📝 Client agreement management and generation
+- 👥 Employee compliance monitoring
+- 🔍 Compliance audit tracking
+- 📧 Email communication monitoring
+- 📅 Compliance calendar and deadlines
 
 ## Tech Stack
 
-- Next.js 14 (React Framework)
-- TypeScript
-- Tailwind CSS
-- Shadcn/ui Components
-- Prisma (Database ORM)
-- PostgreSQL
+- **Framework:** Next.js 14
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Charts:** Recharts
+- **Icons:** Lucide React
 
 ## Getting Started
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/Investgrape/ria-compliance-system.git
-cd ria-compliance-system
 ```
 
 2. Install dependencies:
 ```bash
+cd ria-compliance-system
 npm install
 ```
 
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
-
-4. Set up the database:
-```bash
-npx prisma generate
-npx prisma db push
-```
-
-5. Run the development server:
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
 ## Project Structure
 
 ```
-ria-compliance-system/
-├── app/                  # Next.js app directory
-│   ├── agreements/      # Agreement management
-│   ├── audit/          # Audit tracking
-│   ├── calendar/       # Compliance calendar
-│   └── dashboard/      # Main dashboard
-├── components/          # Reusable components
-├── lib/                 # Utility functions
-├── prisma/             # Database schema
-└── public/             # Static files
+src/
+  ├── app/              # Next.js app directory
+  ├── components/       # React components
+  │   ├── ui/          # Reusable UI components
+  │   └── ComplianceSystem/  # Main application components
+  │       ├── views/   # Page-level components
+  │       └── forms/   # Form components
+  ├── lib/             # Utility functions
+  └── styles/          # Global styles
 ```
 
-## Features in Development
+## Main Features
 
-- [ ] User Authentication
-- [ ] Agreement Generation
-- [ ] Document Storage
-- [ ] Compliance Tracking
-- [ ] Audit Logging
-- [ ] Reporting
-- [ ] API Integration
+### Dashboard
+- Overview of compliance status
+- Key metrics and statistics
+- Recent activity tracking
+
+### Client Agreements
+- Agreement template management
+- Electronic signature integration
+- Version control and history
+
+### Employee Monitoring
+- License and certification tracking
+- Continuing education requirements
+- Compliance training status
+
+### Audit Management
+- Audit scheduling and tracking
+- Document management
+- Finding remediation tracking
+
+### Email Monitoring
+- Communication review and archival
+- Keyword flagging
+- Risk assessment
+
+## Contributing
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-name`
+3. Make your changes and commit them: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details
