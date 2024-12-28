@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   output: 'export',
-  basePath: '/ria-compliance-system',
-  images: { unoptimized: true },
-  reactStrictMode: true,
-  swcMinify: true,
+  images: {
+    unoptimized: true
+  },
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
 }
 
 module.exports = nextConfig
