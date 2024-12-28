@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'RIA Compliance System',
+  description: 'Compliance management system for RIAs',
+}
+
 export default function RootLayout({
   children,
 }: {
