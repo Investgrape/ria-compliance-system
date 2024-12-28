@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { DashboardView } from '@/components/dashboard-view';
 import { Search, Menu, BarChart, Users, FileText, Settings, Calendar, HelpCircle, Shield } from 'lucide-react';
 
 interface SidebarItem {
@@ -91,9 +92,8 @@ export function ComplianceSystem() {
 
         {/* Content Area */}
         <div className="flex-1 overflow-auto p-6">
-          {/* Content will be rendered here based on activeSection */}
           <div className="max-w-7xl mx-auto">
-            {activeSection === 'dashboard' && <h1 className="text-2xl font-semibold">Dashboard</h1>}
+            {activeSection === 'dashboard' && <DashboardView />}
             {activeSection === 'agreements' && <h1 className="text-2xl font-semibold">Agreements</h1>}
             {activeSection === 'clients' && <h1 className="text-2xl font-semibold">Clients</h1>}
             {activeSection === 'compliance' && <h1 className="text-2xl font-semibold">Compliance</h1>}
